@@ -1,0 +1,196 @@
+{
+	"name": "Blob _to _sql",
+	"properties": {
+		"activities": [
+			{
+				"name": "cars csv to sql",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "cars",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CARS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "mpg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "mpg",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "cyl",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cyl",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "hp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "hp",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "drat",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "drat",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "wt",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "wt",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "qsec",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "qsec",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "vs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "vs",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "am",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "am",
+									"type": "Decimal",
+									"physicalType": "decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "gear",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gear",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "carb",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "carb",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "carscsv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "CarsTable",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-10-14T07:09:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,12 @@
+{
+	"name": "outputparameter",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=pipelinedatabase.database.windows.net;initial catalog=pipeline_database;user id=sqladmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEVFNDUxQUExLTlCRTktNEQ4My04QjRBLURDNTJDOUFERjBERl9lYjEzZDMxZS1jZjdlLTQ5ZjAtOTUyZi1mYzM1ZDFmOGVhMWUiDQp9"
+		}
+	}
+}
