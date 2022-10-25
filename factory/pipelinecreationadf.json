@@ -1,0 +1,9 @@
+{
+	"name": "pipelinecreationadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "816ddc47-a93d-430f-b9a0-66ac4a4f6cf7",
+		"tenantId": "6d8ee791-d926-4ce0-97a2-5d80c3ea3154"
+	}
+}

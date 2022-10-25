@@ -1,0 +1,17 @@
+{
+	"name": "Caesdeath",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "outputcasesdeath",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cases_deathsCSV"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
